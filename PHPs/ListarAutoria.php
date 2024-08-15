@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar</title>
-    <link rel="stylesheet" href="../CSS//StyleAutoria.css">
+    <link rel="stylesheet" href="../CSS//Listargem/StyleAutoria.css">
 </head>
 <body>
 <?php
@@ -18,8 +18,8 @@ $pro_bd = $p->listar();
         <h1>Relação de Autorias Cadastradas</h1>
         <table border="1">
             <tr>
-                <th>Código Livro</th>
                 <th>Código Autor</th>
+                <th>Código Livro</th>
                 <th>Data Lançamento</th>
                 <th>Editora</th>
             </tr>

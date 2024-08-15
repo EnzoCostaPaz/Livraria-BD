@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar</title>
-    <link rel="stylesheet" href="../CSS//StyleAut.css">
+    <link rel="stylesheet" href="../CSS//Listargem/StyleAut.css">
 </head>
 <body>
 <?php

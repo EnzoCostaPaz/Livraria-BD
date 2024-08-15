@@ -1,0 +1,75 @@
+body {
+    font-family: 'Century Gothic', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center; 
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.frase {
+    margin-top: 20px; 
+}
+
+.frase button {
+    background: none;
+    border: none;
+    background-color: #363636;
+    border-radius: 3px;
+    padding: 0px;
+}
+
+.frase button a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px;
+    transition: background .6s;
+    color: aliceblue;
+    font-style: oblique;
+    border-radius: 3px;
+}
+
+.frase button a:hover {
+    color: #4169E1;
+    background-color: #A9A9A9;
+}

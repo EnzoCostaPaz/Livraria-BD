@@ -40,17 +40,17 @@ class livro{
     public function setCategoria($catego){
         $this-> Categoria = $catego;
     }
-    public function setISBN(){
+    public function getISBN(){
         return $this -> ISBN;
     }
-    public function getISBN($isbn){
+    public function setISBN($isbn){
         $this-> ISBN = $isbn;
     }
 
     function salvar(){
         try{
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("insert into livro values (null,?,?)");
+            $sql = $this->conn->prepare("insert into livro values (null,?,?,?,?,?)");
             @$sql->bindParam(1,$this->getTitulo(),PDO::PARAM_STR);
             @$sql->bindParam(2,$this->getCategoria(),PDO::PARAM_STR);
             @$sql->bindParam(3,$this->getISBN(),PDO::PARAM_STR);

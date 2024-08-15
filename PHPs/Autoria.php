@@ -22,28 +22,58 @@ class Autoria{
     public function getDataLacamento(){
         return $this->DataLacamento;
     }
-    public function setSobrenome($dl){
+    public function setDataLacamento($dl){
         $this->DataLacamento = $dl;
     }
     public function getEditora() {
         return $this-> Editora;
     }
-    public function setEmail($Edi){
+    public function setEditora($Edi){
         $this->Editora = $Edi;
     }
     
-
+    public function autorExistente(){
+        try {
+          $this->conn = new Conectar();
+          $sql = $this->conn->prepare("select * from autor where Cod_Autor = ?");//acessa a tabela Autor
+          $sql->bindValue(1,$this->getCod_Autor(),PDO::PARAM_INT);//use bindValue ao invés de bindparam para evitar erros 
+          $sql->execute();//executa a consulta no banco de dados
+          $resultado = $sql->fetchColumn();//retorna o valor da primeira linha da primeira coluna, nesse cado o Codigo do autor
+          return $resultado > 0;//se houver um codigo irá retornar esse valor para saber que existe
+        } catch (PDOException $exc) {
+            echo "Erro ao verificar autor: " . $exc->getMessage(); 
+        }
+    }
+    public function LivroExistente(){
+        try {
+          $this->conn = new Conectar();
+          $sql = $this->conn->prepare("select count(*) from livro where Cod_Livro = ?");
+          $sql->bindValue(1,$this->getCod_Livro(),PDO::PARAM_INT);
+          $sql->execute();
+          $resultado = $sql->fetchColumn();
+          return $resultado > 0;
+        } catch (PDOException $exc) {
+            echo "Erro ao verificar autor: " . $exc->getMessage();        
+        }
+    }
     function salvar(){
         try{
-            $this->conn = new Conectar();
-            $sql = $this->conn->prepare("insert into autoria values (null,?,?)");
+            if (!$this->autorExistente()) {
+                return "Erro: Código do autor não existe!";
+            }
+            if (!$this->LivroExistente()) {
+                return "Erro: Código do livro não existe!";
+
+            }
+           // associa os parâmetros da consulta SQL com os valores respectivos
+            $sql = $this->conn->prepare("insert into autoria values (?,?,?,?)");
             @$sql->bindParam(1,$this->getCod_Autor(),PDO::PARAM_STR);
             @$sql->bindParam(2,$this->getCod_Livro(),PDO::PARAM_STR);
             @$sql->bindParam(3,$this->getDataLacamento(),PDO::PARAM_STR);
             @$sql->bindParam(4,$this->getEditora(),PDO::PARAM_STR);
-            if ($sql->execute()==1) {
-                return"Registro salvo com sucesso!";
-            }
+            if ($sql->execute() == 1) {
+                return "Registro salvo com sucesso!";
+            } 
             $this->conn = null;
         }
         catch(PDOException $exc){

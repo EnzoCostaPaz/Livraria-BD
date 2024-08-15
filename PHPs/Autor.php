@@ -42,14 +42,13 @@ class autor{
     function salvar(){
         try{
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("insert into autor values (null,?,?)");
-            @$sql->bindParam(1,$this->getCod_Autor(),PDO::PARAM_STR);
-            @$sql->bindParam(2,$this->getAutor(),PDO::PARAM_STR);
-            @$sql->bindParam(3,$this->getSobrenome(),PDO::PARAM_STR);
-            @$sql->bindParam(4,$this->getEmail(),PDO::PARAM_STR);
-            @$sql->bindParam(5,$this->getNasc(),PDO::PARAM_STR);
+            $sql = $this->conn->prepare("insert into autor values (null,?,?,?,?)");
+            @$sql->bindParam(1,$this->getAutor(),PDO::PARAM_STR);
+            @$sql->bindParam(2,$this->getSobrenome(),PDO::PARAM_STR);
+            @$sql->bindParam(3,$this->getEmail(),PDO::PARAM_STR);
+            @$sql->bindParam(4,$this->getNasc(),PDO::PARAM_STR);
             if ($sql->execute()==1) {
-                return"Registro salvo com sucesso!";
+                return"Registro do autor salvo com sucesso!";
             }
             $this->conn = null;
         }
