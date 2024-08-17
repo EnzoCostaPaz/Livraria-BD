@@ -35,6 +35,7 @@
                     <b><?php echo "Email:".$pro_mostrar[3]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
                     <br>
                     <b><?php echo "Data de Nascimento:".$pro_mostrar[4]; ?></b>
+                    <s></s>
                     <br>
                     <?php
                 }

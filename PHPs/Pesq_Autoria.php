@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesquisar Livro</title>
+    <title>Pesquisar Editora</title>
     <link rel="stylesheet" href="../CSS/PesqCss/Pesq.css">
 </head>
 <body>
     <form name="Autor" action="" method="post">
         <fieldset name="a">
-    <legend><b>Informe o nome do livro</b></legend>
-    <p><b>Nome do livro</b> <input type="text" name="nomePesq" id="boxText" size="60" maxlength="60"></p>
+    <legend><b>Informe o nome da Editora</b></legend>
+    <p><b>Nome da Editora</b> <input type="text" name="nomePesq" id="boxText" size="60" maxlength="60"></p>
         <center>
             <input name="btnEnviar" type="submit" value="Consultar">
             <input name="limpar" type="reset" value="resetar">

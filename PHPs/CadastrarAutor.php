@@ -23,7 +23,7 @@
             </fieldset>
             <br><center>
             <button><a href="../MenuLivraria.html">Voltar</a></button>
-            <button><a href="../PHPs/ListarAut.php">Visualizar Lista</a></button>
+            <button><a href="./ListarAut.php">Visualizar Lista</a></button>
             </center>
     </form>
 </body>
