@@ -1,5 +1,5 @@
 <?php
-include_once './ConectarLi.php';
+include_once '../ConectarLi.php';
 
 class livro{
     private $Cod_Livro;
@@ -47,6 +47,18 @@ class livro{
         $this-> ISBN = $isbn;
     }
 
+    public function LivroExistente(){
+        try {
+          $this->conn = new Conectar();
+          $sql = $this->conn->prepare("select count(*) from livro where Cod_Livro = ?");
+          $sql->bindValue(1,$this->getCod_Livro(),PDO::PARAM_INT);
+          $sql->execute();
+          $resultado = $sql->fetchColumn();
+          return $resultado > 0;
+        } catch (PDOException $exc) {
+            echo "Erro ao verificar autor: " . $exc->getMessage();        
+        }
+    }
     function salvar(){
         try{
             $this->conn = new Conectar();
@@ -111,20 +123,25 @@ class livro{
         }
     }
     function exclusao(){
-        try{
-            $this->conn = new Conectar();
-            $sql = $this->conn->prepare("delete from livro where Cod_Livro = ?");
-            $sql ->bindParam(1,$this->getCod_Livro(),PDO::PARAM_STR);
-            if($sql->execute()==1){
-                return "Excluindo com sucesso";
-            }
-            else{
-                return "Erro na exclusão";
-            }
-            $this->conn = null;
+        if (!$this->LivroExistente()) {
+            echo "<b>"."Erro: este livro não existe no banco de dados"."</b>";
         }
-        catch(PDOException $exc){
-            echo "" . $exc->getMessage();
+        else{
+            try{
+                $this->conn = new Conectar();
+                $sql = $this->conn->prepare("delete from livro where Cod_Livro = ?");
+                $sql ->bindValue(1,$this->getCod_Livro(),PDO::PARAM_STR);
+                if($sql->execute()==1){
+                    return "Excluindo com sucesso";
+                }
+                else{
+                    return "Erro na exclusão";
+                }
+                $this->conn = null;
+            }
+            catch(PDOException $exc){
+                echo "" . $exc->getMessage();
+        }
         }
     }
     function listar(){

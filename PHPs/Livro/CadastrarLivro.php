@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS//CadastroCss/CadasroCss.css">
+    <link rel="stylesheet" href="../../CSS/CadastroCss/CadasroCss.css">
     <title>Cadastrar Livro</title>
     <script>
             // Script para adicionar mascara a area de texto do ISBN
@@ -39,8 +39,8 @@
             <input name="limpar" type="reset" value="Limpar">
         </fieldset>
         <br><center>
-            <button><a href="../MenuLivraria.html">Voltar</a></button>
-            <button><a href="../PHPs/ListarLiv.php">Visualizar Lista</a>
+            <button><a href="../../MenuLivraria.html">Voltar</a></button>
+            <button><a href="../Livro/ListarLiv.php">Visualizar Lista</a>
         </center>
     </form>
 </body>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesquisar Autor</title>
-    <link rel="stylesheet" href="../CSS/PesqCss/Pesq.css">
+    <link rel="stylesheet" href="../../CSS/PesqCss/Pesq.css">
 </head>
 <body>
     <form name="Autor" action="" method="post">
@@ -35,6 +35,7 @@
                     <b><?php echo "Email:".$pro_mostrar[3]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
                     <br>
                     <b><?php echo "Data de Nascimento:".$pro_mostrar[4]; ?></b>
+                    <s></s>
                     <br>
                     <?php
                 }
@@ -42,7 +43,7 @@
 ?>
             </fieldset>
             <center>
-            <button><a href="../MenuLivraria.html">Voltar</a></button>
+            <button><a href="../../MenuLivraria.html">Voltar</a></button>
         </center>
         </form>
     </form>

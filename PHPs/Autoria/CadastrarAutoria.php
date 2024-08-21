@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/CadastroCss/CadasroCss.css">
+    <link rel="stylesheet" href="../../CSS/CadastroCss/CadasroCss.css">
     <title>Cadastrar Autoria</title>
 </head>
 <body>
@@ -23,8 +23,8 @@
         </fieldset>
         <br>
         <center>
-            <button><a href="../MenuLivraria.html">Voltar</a></button>
-            <button><a href="../PHPs/ListarAutoria.php">Visualizar Lista</a></button>
+            <button><a href="../../MenuLivraria.html">Voltar</a></button>
+            <button><a href="./ListarAutoria.php">Visualizar Lista</a></button>
         </center>
     </form>
 

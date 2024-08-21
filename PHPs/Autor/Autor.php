@@ -1,5 +1,5 @@
 <?php
-include_once './ConectarLi.php';
+include_once '../ConectarLi.php';
 
 class autor{
     private $Cod_Autor;
@@ -39,6 +39,18 @@ class autor{
         $this-> Nasc = $nasc;
     }
 
+    public function autorExistente(){
+        try {
+          $this->conn = new Conectar();
+          $sql = $this->conn->prepare("select * from autor where Cod_Autor = ?");//acessa a tabela Autor
+          $sql->bindValue(1,$this->getCod_Autor(),PDO::PARAM_INT);//use bindValue ao invés de bindparam para evitar erros 
+          $sql->execute();//executa a consulta no banco de dados
+          $resultado = $sql->fetchColumn();//retorna o valor da primeira linha da primeira coluna, nesse cado o Codigo do autor
+          return $resultado > 0;//se houver um codigo irá retornar esse valor para saber que existe
+        } catch (PDOException $exc) {
+            echo "Erro ao verificar autor: " . $exc->getMessage(); 
+        }
+    }
     function salvar(){
         try{
             $this->conn = new Conectar();
@@ -102,20 +114,26 @@ class autor{
         }
     }
     function exclusao(){
-        try{
-            $this->conn = new Conectar();
-            $sql = $this->conn->prepare("delete from autor where Cod_Autor = ?");
-            $sql ->bindParam(1,$this->getCod_Autor(),PDO::PARAM_STR);
-            if($sql->execute()==1){
-                return "Excluindo com sucesso";
-            }
-            else{
-                return "Erro na exclusão";
-            }
-            $this->conn = null;
+        if (!$this->autorExistente()) {
+            echo "<b>Erro: este autor não existe no banco de dados</b>";
         }
-        catch(PDOException $exc){
-            echo "" . $exc->getMessage();
+        else {
+            try{
+               
+                $this->conn = new Conectar();
+                $sql = $this->conn->prepare("delete from autor where Cod_Autor = ?");
+                $sql ->bindValue(1,$this->getCod_Autor(),PDO::PARAM_STR);
+                if($sql->execute()==1){
+                    return "Excluindo com sucesso";
+                }
+                else{
+                    return "Erro na exclusão";
+                }
+                $this->conn = null;
+            }
+            catch(PDOException $exc){
+                echo "" . $exc->getMessage();
+            }
         }
     }
     function listar(){
