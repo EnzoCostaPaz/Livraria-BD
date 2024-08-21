@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesquisar Editora</title>
+<<<<<<< HEAD:PHPs/Autoria/Pesq_Autoria.php
     <link rel="stylesheet" href="../../CSS/PesqCss/Pesq.css">
+=======
+    <link rel="stylesheet" href="../CSS/PesqCss/Pesq.css">
+>>>>>>> f827118f689dfb5accfb51c44c867c304b2750be:PHPs/Pesq_Autoria.php
 </head>
 <body>
     <form name="Autor" action="" method="post">

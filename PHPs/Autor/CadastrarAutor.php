@@ -22,7 +22,11 @@
                 <input name="limpar" type="reset" value="Limpar">
             </fieldset>
             <br><center>
+<<<<<<< HEAD:PHPs/Autor/CadastrarAutor.php
             <button><a href="../../MenuLivraria.html">Voltar</a></button>
+=======
+            <button><a href="../MenuLivraria.html">Voltar</a></button>
+>>>>>>> f827118f689dfb5accfb51c44c867c304b2750be:PHPs/CadastrarAutor.php
             <button><a href="./ListarAut.php">Visualizar Lista</a></button>
             </center>
     </form>
