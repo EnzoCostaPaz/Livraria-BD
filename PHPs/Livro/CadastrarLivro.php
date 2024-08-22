@@ -6,12 +6,9 @@
     <link rel="stylesheet" href="../../CSS/CadastroCss/CadasroCss.css">
     <title>Cadastrar Livro</title>
     <script>
-            // Script para adicionar mascara a area de texto do ISBN
         function mascaraISBN(input) {
-            // Remove caracteres que não são números
             var valor = input.value.replace(/\D/g, '');
 
-            // Adiciona a máscara
             if (valor.length > 3) {
                 valor = valor.replace(/^(\d{3})(\d)/, '$1-$2');
             }
