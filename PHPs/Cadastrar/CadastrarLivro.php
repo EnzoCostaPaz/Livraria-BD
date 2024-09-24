@@ -37,7 +37,7 @@
         </fieldset>
         <br><center>
             <button><a href="../../MenuLivraria.html">Voltar</a></button>
-            <button><a href="../Livro/ListarLiv.php">Visualizar Lista</a>
+            <button><a href="../Listar/ListarLiv.php">Visualizar Lista</a>
         </center>
     </form>
 </body>
@@ -46,7 +46,7 @@
 extract($_POST, EXTR_OVERWRITE);
 if(isset($btenviar)){
 
-    include_once './Livros.php';
+    include_once '../Livros.php';
     $pro = new livro();
     $pro -> setTitulo($txtTitu);
     $pro ->setCategoria($txtCateg);

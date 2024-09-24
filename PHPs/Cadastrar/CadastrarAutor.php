@@ -22,12 +22,8 @@
                 <input name="limpar" type="reset" value="Limpar">
             </fieldset>
             <br><center>
-<<<<<<< HEAD:PHPs/Autor/CadastrarAutor.php
             <button><a href="../../MenuLivraria.html">Voltar</a></button>
-=======
-            <button><a href="../MenuLivraria.html">Voltar</a></button>
->>>>>>> f827118f689dfb5accfb51c44c867c304b2750be:PHPs/CadastrarAutor.php
-            <button><a href="./ListarAut.php">Visualizar Lista</a></button>
+            <button><a href="../Listar/ListarAut.php">Visualizar Lista</a></button>
             </center>
     </form>
 </body>
@@ -36,7 +32,7 @@
 extract($_POST, EXTR_OVERWRITE);
 if(isset($btenviar)){
 
-    include_once './Autor.php';
+    include_once '../Autor.php';
     $pro = new autor();
     $pro -> setAutor($txtNome);
     $pro ->setSobrenome($txtSobNome);

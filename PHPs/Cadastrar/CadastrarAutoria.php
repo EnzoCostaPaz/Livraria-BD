@@ -24,13 +24,13 @@
         <br>
         <center>
             <button><a href="../../MenuLivraria.html">Voltar</a></button>
-            <button><a href="./ListarAutoria.php">Visualizar Lista</a></button>
+            <button><a href="../Listar/ListarAutoria.php">Visualizar Lista</a></button>
         </center>
     </form>
 
     <?php
     if (isset($_POST['btenviar'])) {
-        include_once './Autoria.php';
+        include_once '../Autoria.php';
 
         $pro = new Autoria();
         $pro->setCod_Autor($_POST['CodAutor']);

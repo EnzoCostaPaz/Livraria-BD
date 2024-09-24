@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar</title>
-    <!-- Corrija o caminho do CSS aqui -->
     <link rel="stylesheet" href="../../CSS/Listargem/StyleLista.css">
 </head>
 <body>
 <?php
-include_once './Livros.php';
+include_once '../Livros.php';
 $p = new livro();
 $pro_bd = $p->listar();
 ?>
@@ -42,7 +41,6 @@ $pro_bd = $p->listar();
         </table>
         <br><br>
         <div class="frase">
-            <!-- Corrija o caminho do link de volta aqui -->
             <button><b><a href="../../MenuLivraria.html">Voltar</a></b></button>
         </div>
     </div>

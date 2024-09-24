@@ -1,5 +1,5 @@
 <?php
-include_once '../ConectarLi.php';
+include_once 'C:/xampp/htdocs/AcessoBD/Bd_Autoria/PHPs/ConectarLi.php';
 
 class livro{
     private $Cod_Livro;
@@ -78,37 +78,51 @@ class livro{
         }
     }
     function alterar(){
-        try{
-            $this->conn = new Conectar();
-            $sql = $this->conn->prepare("Select * from livro where Cod_Livro = ?");
-            @$sql->bindParam(1,$this->getCod_Livro(),PDO::PARAM_STR);
-            $sql->execute();
-            return $sql->fetchAll();
+        if (!$this->LivroExistente()) {
+            echo "Livro não existenete no banco de dados";
         }
-        catch(PDOException $exc){
-            echo "Erro ao alterar". $exc->getMessage();
+        else {
+            try{
+                $this->conn = new Conectar();
+                $sql = $this->conn->prepare("Select * from livro where Cod_Livro = ?");
+                @$sql->bindParam(1,$this->getCod_Livro(),PDO::PARAM_STR);
+                $sql->execute();
+                return $sql->fetchAll();
+            }
+            catch(PDOException $exc){
+                echo "Erro ao alterar". $exc->getMessage();
+            }
         }
+        
     }
     function alterar2(){
-        try
-        {
-            $this->conn = new Conectar();
-            $sql = $this->conn->prepare("update livro set Titulo = ? where id = ?");
-            @$sql->bindParam(1,$this->getTitulo(),PDO::PARAM_STR);
-            @$sql->bindParam(2,$this->getCategoria(),PDO::PARAM_STR);
-            @$sql->bindParam(3,$this->getISBN(),PDO::PARAM_STR);
-            @$sql->bindParam(4,$this->getIdioma(),PDO::PARAM_STR);
-            @$sql->bindParam(5,$this->getQtdePag(),PDO::PARAM_STR);
-            if ($sql->execute()==1) {
-                return "Registro Salvo com sucesso";
+        if (!$this->LivroExistente()) {
+            echo "Livro não existenete no banco de dados";
+        }
+        else {
+            try
+            {
+                $this->conn = new Conectar();
+                $sql = $this->conn->prepare("update livro set Titulo = ?, Categoria = ?, ISBN = ?, Idioma = ?, QtdePag = ? where Cod_Livro = ?");
+                @$sql->bindParam(1,$this->getTitulo(),PDO::PARAM_STR);
+                @$sql->bindParam(2,$this->getCategoria(),PDO::PARAM_STR);
+                @$sql->bindParam(3,$this->getISBN(),PDO::PARAM_STR);
+                @$sql->bindParam(4,$this->getIdioma(),PDO::PARAM_STR);
+                @$sql->bindParam(5,$this->getQtdePag(),PDO::PARAM_STR);
+                @$sql->bindParam(6,$this->getCod_Livro(),PDO::PARAM_STR);
+                if ($sql->execute() == 1) {
+                    return "<center>Registro Alterado com sucesso</center>";
+                }
+                $this->conn = null;
             }
-            $this->conn = null;
+            catch(PDOException $exc)
+            {
+                echo "Erro ao salvar o registro: " . $exc->getMessage();
+            }
         }
-        catch(PDOException $exc)
-        {
-            echo "Erro ao salvar o registro". $exc->getMessage();
-        }
+       
     }
+    
     function consultar(){
         try{
             $this->conn = new Conectar();

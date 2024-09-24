@@ -20,7 +20,7 @@
             <?php
             extract($_POST,EXTR_OVERWRITE);
             if (isset($btnEnviar)) {
-                include_once './Livros.php';
+                include_once '../Livros.php';
                 $p = new livro();
                 $p->setTitulo($nomePesq.'%');// '%' = busca aproximada, sem sensitive case
                 $pro_bd = $p->consultar();//chama o metodo com retorno

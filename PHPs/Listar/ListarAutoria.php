@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-include_once './Autoria.php';
+include_once '../Autoria.php';
 $p = new Autoria();
 $pro_bd = $p->listar();
 ?>

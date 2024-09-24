@@ -1,5 +1,5 @@
 <?php
-include_once '../ConectarLi.php';
+include_once 'C:/xampp/htdocs/AcessoBD/Bd_Autoria/PHPs/ConectarLi.php';
 
 class autor{
     private $Cod_Autor;
@@ -69,27 +69,33 @@ class autor{
         }
     }
     function alterar(){
-        try{
-            $this->conn = new Conectar();
-            $sql = $this->conn->prepare("Select * from autor where Cod_Autor = ?");
-            @$sql->bindParam(1,$this->getCod_Autor(),PDO::PARAM_STR);
-            $sql->execute();
-            return $sql->fetchAll();
+        if (!$this->autorExistente()) {
+           echo "Autor não existente no banco de dados";
         }
-        catch(PDOException $exc){
-            echo "Erro ao alterar". $exc->getMessage();
+        else {
+            try{
+                $this->conn = new Conectar();
+                $sql = $this->conn->prepare("Select * from autor where Cod_Autor = ?");
+                @$sql->bindParam(1,$this->getCod_Autor(),PDO::PARAM_STR);
+                $sql->execute();
+                return $sql->fetchAll();
+            }
+            catch(PDOException $exc){
+                echo "Erro ao alterar". $exc->getMessage();
+            }
         }
+       
     }
     function alterar2(){
         try
         {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("update autor set NomeAutor = ? where Cod_Autor = ?");
-            @$sql->bindParam(1,$this->getCod_Autor(),PDO::PARAM_STR);
-            @$sql->bindParam(2,$this->getAutor(),PDO::PARAM_STR);
-            @$sql->bindParam(3,$this->getSobrenome(),PDO::PARAM_STR);
-            @$sql->bindParam(4,$this->getEmail(),PDO::PARAM_STR);
-            @$sql->bindParam(5,$this->getNasc(),PDO::PARAM_STR);
+            $sql = $this->conn->prepare("update autor set NomeAutor = ?,Sobrenome = ?,Email = ?, Nasc = ? where Cod_Autor = ?");
+            @$sql->bindParam(1,$this->getAutor(),PDO::PARAM_STR);
+            @$sql->bindParam(2,$this->getSobrenome(),PDO::PARAM_STR);
+            @$sql->bindParam(3,$this->getEmail(),PDO::PARAM_STR);
+            @$sql->bindParam(4,$this->getNasc(),PDO::PARAM_STR);
+            @$sql->bindParam(5,$this->getCod_Autor(),PDO::PARAM_STR);
             if ($sql->execute()==1) {
                 return "Registro Salvo com sucesso";
             }
