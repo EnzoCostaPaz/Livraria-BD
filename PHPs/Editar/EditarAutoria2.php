@@ -8,7 +8,7 @@
 </head>
 <body>
     <center>
-        <font face="Century Gothic" size="6"><b>Verifique os Dados do Livro Cadastro</b></font>
+        <font face="Century Gothic" size="6"><b>Verifique os Dados da Autoria Cadastrado</b></font>
         <fieldset>
         <?php
            
