@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../CSS/loginStyle.css">
+<<<<<<< HEAD
     <link rel="shortcut icon" type="imagex/png" href="../IMGs/icon.ico">
+=======
+>>>>>>> a8f38edd27b725fb64d11c5bf0f73edddd23c438
     <title>Login</title>
 </head>
 
@@ -64,7 +67,11 @@
             ?>
             <?php
            
+<<<<<<< HEAD
                 header("location:MenuLivraria.html");
+=======
+                header("location:../MenuLivraria.html");
+>>>>>>> a8f38edd27b725fb64d11c5bf0f73edddd23c438
         }
         if ($existe == false) {
             header("location:loginErrado.html"); // Display error message
