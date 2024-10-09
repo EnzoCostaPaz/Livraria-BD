@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar</title>
     <link rel="stylesheet" href="../../CSS/Listargem/StyleLista.css">
+    <link rel="shortcut icon" type="imagex/png" href="../../IMGs/icon.ico">
+
 </head>
 <body>
 <?php
@@ -41,7 +43,7 @@ $pro_bd = $p->listar();
         </table>
         <br><br>
         <div class="frase">
-            <button><b><a href="../../MenuLivraria.html">Voltar</a></b></button>
+            <button><b><a href="../../Login/MenuLivraria.html">Voltar</a></b></button>
         </div>
     </div>
 </center>

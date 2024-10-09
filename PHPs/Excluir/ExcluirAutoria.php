@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Autor e Livro</title>
     <link rel="stylesheet" href="../../CSS/DeletarCss/Delet.css">
+    <link rel="shortcut icon" type="imagex/png" href="../../IMGs/icon.ico">
 </head>
 <body>
     <form name="Autor" action="" method="post">
@@ -32,7 +33,7 @@
 ?>
             </fieldset>
             <center>
-            <button><a href="../../MenuLivraria.html">Voltar</a></button>
+            <button><a href="../../Login/MenuLivraria.html">Voltar</a></button>
             <button><a href="../Listar/ListarAutoria.php">Visualizar Lista</a></button>
         </center>
         </form>

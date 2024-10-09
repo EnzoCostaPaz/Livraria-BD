@@ -43,7 +43,7 @@
 ?>
             </fieldset>
             <center>
-            <button><a href="../../MenuLivraria.html">Voltar</a></button>
+            <button><a href="../../Login/MenuLivraria.html">Voltar</a></button>
         </center>
         </form>
     </form>

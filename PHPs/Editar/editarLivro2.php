@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Livro</title>
     <link rel="stylesheet" href="../../CSS/AltCss/AltCSS.css">
+    <link rel="shortcut icon" type="imagex/png" href="../../IMGs/icon.ico">
+
 </head>
 <body>
     <center>
@@ -64,7 +66,7 @@
         </fieldset>
     </center>
     <center>
-        <button><a href="../../MenuLivraria.html">Voltar</a></button>
+        <button><a href="../../Login/MenuLivraria.html">Voltar</a></button>
     </center>
 </body>
 </html>

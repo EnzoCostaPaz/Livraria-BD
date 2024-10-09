@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Autoria</title>
     <link rel="stylesheet" href="../../CSS/AltCss/AltCSS.css">
+    <link rel="shortcut icon" type="imagex/png" href="../../IMGs/icon.ico">
 </head>
 <body>
     <center>
-        <font face="Century Gothic" size="6"><b>Verifique os Dados do Livro Cadastro</b></font>
+        <font face="Century Gothic" size="6"><b>Verifique os Dados da Autoria Cadastrado</b></font>
         <fieldset>
         <?php
            
@@ -62,7 +63,7 @@
         </form>
 
         </fieldset>
-        <button><a href="../../MenuLivraria.html">Voltar</a></button>
+        <button><a href="../../Login/MenuLivraria.html">Voltar</a></button>
     </center>
 </body>
 </html>

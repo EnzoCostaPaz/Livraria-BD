@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+  :root{
+    --corP: #c6c3c3;
+    --corS: #ffffff;
+    --corT: #000;
+    --corAz:#3051e5;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image: url(../IMGs/Fundos3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+a{
+    text-decoration: none;
+    color: #ffff
+}
+a :hover{
+    text-decoration: underline;
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0);
+}
+.login-box{
+    position: relative;
+    width: 450px;
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--corT);
+    border-radius: 15px;
+    padding: 7.5em 2.5em 4em 2.5em;
+    color: var(--corT);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
+}
+.login-header{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--corAz);
+    width: 140px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+}
+.login-header span{
+    font-size: 30px;
+    color: var(--corS);
+}
+.login-header::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 50%;
+    background: transparent;
+    box-shadow: 15px 0 0 0 var(--corAz);
+}
+.login-header::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right:-30px;
+    width: 30px;
+    height: 30px;
+    border-top-left-radius: 50%;
+    background: transparent;
+    box-shadow: -15px 0 0 0 var(--corAz);
+}
+.input-inbox{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+.input-field{
+    width: 90%;
+    height:55px;
+    font-size: 16px;
+    background: transparent;
+    color: var(--corT);
+    padding-inline: 20px 50px;
+    border: 2px solid var(--corAz);
+    border-radius: 30px;
+    outline: none;
+}
+#user{
+    margin-bottom: 10px;
+}
+.label{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: var(--corS);
+    transition: .2s;
+
+}
+.input-field:focus ~ .label,
+.input-field:valid ~ .label{
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-size: 14px;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+.icon{
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    font-size: 20px;
+}
+.submit{
+    width: 100%;
+    height: 50px;
+    background: var(--corAz);
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+    
+
+}
+.submit:hover{
+    background-color: var(--corS);
+}

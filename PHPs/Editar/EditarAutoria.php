@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Autoria</title>
     <link rel="stylesheet" href="../../CSS/AltCss/AltCSS.css">
+    <link rel="shortcut icon" type="imagex/png" href="../../IMGs/icon.ico">
 </head>
 <body>
  <center><font face = "Century Gothic" size = "6"><b>Alteração de Livros Cadstrados</b></font>
@@ -23,7 +24,7 @@
         </fieldset>
     </form>
     <br>
-    <button><a href="../../MenuLivraria.html">Voltar</a></button>
+    <button><a href="../../Login/MenuLivraria.html">Voltar</a></button>
 </center>
 <br><br>
 </body>
